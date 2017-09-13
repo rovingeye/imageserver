@@ -1,7 +1,12 @@
 spring:
+  cache:
+    cache-names: images
+    caffeine:
+      spec: maximumSize=6000, expireAfterAccess=1d, initialCapacity=6000
   application:
     name: Imageserver
 
 imageserver:
-  directory: /tmp/imageserver
+  directory: d:\tmp\imageserver
   default: default.jpg
+

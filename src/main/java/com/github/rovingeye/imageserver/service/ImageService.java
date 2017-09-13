@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import net.coobird.thumbnailator.Thumbnails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import javax.imageio.ImageIO;
@@ -30,7 +31,9 @@ public class ImageService {
         this.defaultImage = defaultImage;
     }
 
+    @Cacheable("images")
     public byte[] getResizedImage(final String imageName, final int width, final int height, final boolean forceResize) {
+        log.info("Actual method call!");
         final File imageFile = getImageFromDisk(imageName);
         final BufferedImage resizedImage;
 
