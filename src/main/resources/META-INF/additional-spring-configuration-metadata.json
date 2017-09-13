@@ -1,0 +1,14 @@
+{
+  "properties": [
+    {
+      "name": "imageserver.directory",
+      "type": "java.lang.String",
+      "description": "Directory where the images are stored."
+    },
+    {
+      "name": "imageserver.default",
+      "type": "java.lang.String",
+      "description": "Default image that will be returned."
+    }
+  ]
+}

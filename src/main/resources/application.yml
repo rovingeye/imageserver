@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: Imageserver
+
+imageserver:
+  directory: /tmp/imageserver
+  default: default.jpg
