@@ -20,6 +20,7 @@ import static java.util.Objects.isNull;
 @Service
 public class ImageService {
 
+    private static final byte[] EMPTY_BYTE_ARRAY = new byte[0];
     private final String directory;
     private final String defaultImage;
 
@@ -38,7 +39,7 @@ public class ImageService {
         if (isNotNull(resizedImage)) {
             return convertBufferedImageToByteArray(resizedImage);
         }
-        return new byte[0];
+        return EMPTY_BYTE_ARRAY;
     }
 
     private BufferedImage getResizedImage(final File imageFile, final int width, final int height, final boolean forceResize) {
@@ -70,7 +71,7 @@ public class ImageService {
             out.flush();
         } catch (final IOException e) {
             log.error("Could not convert image to a byte array.", e);
-            return new byte[0];
+            return EMPTY_BYTE_ARRAY;
         }
         return out.toByteArray();
     }
