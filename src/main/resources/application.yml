@@ -7,6 +7,6 @@ spring:
     name: Imageserver
 
 imageserver:
-  directory: d:\tmp\imageserver
+  directory: /tmp/imageserver
   default: default.jpg
 
