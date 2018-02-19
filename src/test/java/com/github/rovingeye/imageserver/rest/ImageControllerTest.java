@@ -29,14 +29,14 @@ public class ImageControllerTest {
     private HttpServletResponse httpServletResponseMock;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         this.httpServletResponseMock = mock(HttpServletResponse.class);
         this.imageServiceMock = mock(ImageService.class);
         this.imageController = new ImageController(this.imageServiceMock);
     }
 
     @Test
-    public void getResizedImage() throws Exception {
+    public void getResizedImage() {
         when(this.imageServiceMock.getResizedImage(IMAGE_NAME, WIDTH, HEIGHT, FORCE_RESIZE_FALSE)).thenReturn(BYTES);
 
         final ResponseEntity<byte[]> result = this.imageController.getResizedImage(WIDTH, HEIGHT, IMAGE_NAME, this.httpServletResponseMock);
