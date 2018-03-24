@@ -2,7 +2,7 @@ spring:
   cache:
     cache-names: images
     caffeine:
-      spec: maximumSize=6000, expireAfterAccess=1d, initialCapacity=6000
+      spec: maximumSize=1000, expireAfterAccess=1d, initialCapacity=500
   application:
     name: Imageserver
 
