@@ -1,19 +1,7 @@
 language: java
 jdk:
   - oraclejdk8
-env:
-#  CODECLIMATE_REPO_TOKEN: 3a88c6e42da81a5b42b820888f65bb16ff669f0b92872a53ba040269031f1fc6
-
 
 env:
   global:
     - CC_TEST_REPORTER_ID=3a88c6e42da81a5b42b820888f65bb16ff669f0b92872a53ba040269031f1fc6
-
-before_script:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
-script:
-  - bundle exec rspec
-after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
