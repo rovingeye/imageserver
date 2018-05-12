@@ -22,7 +22,7 @@ public class ImageController {
         this.imageService = imageService;
     }
 
-    @GetMapping("/image/{width}/{height}/{imageName:.+}")
+    @GetMapping(value = "/image/{width}/{height}/{imageName:.+}", produces = MediaType.IMAGE_JPEG_VALUE)
     public ResponseEntity<byte[]> getResizedImage(@PathVariable("width") final int width,
                                                   @PathVariable("height") final int height,
                                                   @PathVariable("imageName") final String imageName,

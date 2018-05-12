@@ -37,7 +37,6 @@ public class ImageService {
         final File imageFile = getImageFromDisk(imageName);
         final BufferedImage resizedImage;
 
-
         resizedImage = getResizedImage(imageFile, width, height, forceResize);
 
         if (isNotNull(resizedImage)) {
