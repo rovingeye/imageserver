@@ -17,8 +17,8 @@ script:
 
 deploy:
   provider: releases
-  user: ${env.GITHUB_USER}
-  password: ${env.GITHUB_PASS}
+  user: ${GITHUB_USER}
+  password: ${GITHUB_PASS}
   file:
     - imageserver-*
   skip_cleanup: true
