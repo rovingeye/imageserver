@@ -84,7 +84,7 @@ public class ImageService {
     }
 
     private File getImageFromDisk(final String imageName) {
-        return Files.exists(Paths.get(this.directory, imageName)) ? Paths.get(this.directory, imageName).toFile() : getDefaultImageFile();
+        return Paths.get(this.directory, imageName).toFile().exists() ? Paths.get(this.directory, imageName).toFile() : getDefaultImageFile();
     }
 
     private File getDefaultImageFile() {
