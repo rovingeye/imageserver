@@ -14,14 +14,3 @@ cache:
 
 script:
   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
-
-deploy:
-  provider: releases
-  user: ${GITHUB_USER}
-  password: ${GITHUB_PASS}
-  file:
-    - imageserver-*
-  skip_cleanup: true
-  on:
-    repo: rovingeye/imageserver
-    tags: true
